@@ -33,12 +33,22 @@ public class ArrayOps {
                 max = array[index];
             } 
         }
+        int check = 0;
+        for (int index = 0; index < array.length; index++) {
+            if (array[index] == max) {
+                check++;
+            } 
+        }
+        if (check > 1) {
+            return max;
+        }
         int max2 = array[0];
         for (int i = 0; i < array.length; i++) {
              if (array[i] > max2 && array[i]!=max) {
                 max2 = array[i];
              }   
-            }          
+            }    
+              
              return max2;
         }
          
