@@ -42,6 +42,7 @@ public class StringOps {
     }
 
     public static String camelCase (String string) {
+        string = deleteSpacebeginning (string);
         string = lowerCase(string);
         string = upperNew(string);
         string = deleteSpace(string);
@@ -57,7 +58,6 @@ public class StringOps {
               s = s + string.charAt(i);  
             }
         }
-        System.out.println(s);
         return s;
     }
 
@@ -70,7 +70,6 @@ public class StringOps {
               s = s + string.charAt(i);  
             }
         }
-        System.out.println(s);
         return s;
     }
 
@@ -83,7 +82,16 @@ public class StringOps {
               s = s + string.charAt(i);  
             }
         }
-        System.out.println(s);
+        return s;
+    }
+
+    public static String deleteSpacebeginning (String string) {
+        String s = "";
+        for (int i = 0; i < string.length(); i++) {
+            if (string.charAt(i) != 32) {
+              s = string.substring(i); break; 
+            }
+        }
         return s;
     }
 
