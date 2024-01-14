@@ -24,7 +24,6 @@ public class StringOps {
     public static void main(String[] args) {
     System.out.println(capVowelsLowRest("Hello World")); 
     
-    camelCase("             Hi   hi  hi hi");  
 
 
     }
@@ -49,7 +48,6 @@ public class StringOps {
         string = lowerCase(string);
         string = upperNew(string);
         string = deleteSpace(string);
-        System.out.println(string);
         return string;
     }
 
