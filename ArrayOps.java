@@ -5,6 +5,7 @@ public class ArrayOps {
         System.out.println(containsTheSameElements(new int[] {1, 4, 1, 1, 2}, new int[] {2, 1, 4}));
         System.out.println(isSorted(new int[] {7, 5, 4, 3, -12}));
         System.out.println(isSorted(new int[] {1, -2, 3}));
+         System.out.println(isSorted(new int[] {1,2,3}));
     }
     
     public static int findMissingInt (int [] array) {
@@ -66,6 +67,10 @@ public class ArrayOps {
             same = false;
             break;
         }
+        if (same == true) {
+            return same;
+        }
+
     }
         for (int j = 0; j < array.length - 1; j++) { 
             if (array[j] > array[j+1]) {
