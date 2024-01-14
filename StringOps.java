@@ -62,7 +62,6 @@ public class StringOps {
               s = s + string.charAt(i);  
             }
         }
-        System.out.println(s);
         return s;
     }
 
@@ -77,7 +76,6 @@ public class StringOps {
               s = s + string.charAt(i);  
             }
         }
-        System.out.println(s);
         return s;
     }
 
@@ -88,7 +86,6 @@ public class StringOps {
               s += string.charAt(i);  
             }
         }
-        System.out.println(s);
         return s;
     }
 
@@ -99,7 +96,6 @@ public class StringOps {
               s = string.substring(i); break; 
             }
         }
-        System.out.println(s);
         return s;
     }
 
