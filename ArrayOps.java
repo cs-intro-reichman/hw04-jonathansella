@@ -5,7 +5,7 @@ public class ArrayOps {
         System.out.println(containsTheSameElements(new int[] {1, 4, 1, 1, 2}, new int[] {2, 1, 4}));
         System.out.println(isSorted(new int[] {7, 5, 4, 3, -12}));
         System.out.println(isSorted(new int[] {1, -2, 3}));
-         System.out.println(isSorted(new int[] {1,2,3}));
+        System.out.println(isSorted(new int[] {1,2,3}));
     }
     
     public static int findMissingInt (int [] array) {
@@ -22,8 +22,9 @@ public class ArrayOps {
                 return index;
                 
             }
+
         }
-        return array.length + 1;
+        return array.length;
     }
 
     public static int secondMaxValue(int [] array) {
