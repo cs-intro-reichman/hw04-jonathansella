@@ -22,7 +22,8 @@ public class StringOps {
     //////                                               ///////
     ////////////////////////////////////////////////////////////
     public static void main(String[] args) {
-    System.out.println(capVowelsLowRest("Hello World"));        
+    System.out.println(capVowelsLowRest("Hello World")); 
+    System.out.println(camelCase("    Intro to coMPUter sCIEncE"));       
     }
 
     public static String capVowelsLowRest (String string) {
@@ -41,8 +42,49 @@ public class StringOps {
     }
 
     public static String camelCase (String string) {
-        // Write your code here:
-        return "";
+        string = lowerCase(string);
+        string = upperNew(string);
+        string = deleteSpace(string);
+        return string;
+    }
+
+    public static String lowerCase (String string) {
+        String s = "";
+        for (int i = 0; i < string.length(); i++) {
+            if (string.charAt(i) > 64 && string.charAt(i) < 91) {
+                s = s + (char)(string.charAt(i) + 32);
+            } else { 
+              s = s + string.charAt(i);  
+            }
+        }
+        System.out.println(s);
+        return s;
+    }
+
+    public static String upperNew (String string) {
+        String s = string.charAt(0) + "";
+        for (int i = 1; i < string.length(); i++) {
+            if (string.charAt(i-1) == 32 && (string.charAt(i) < 65 || string.charAt(i) > 90)) {
+                s = s + (char)(string.charAt(i) - 32);
+            } else { 
+              s = s + string.charAt(i);  
+            }
+        }
+        System.out.println(s);
+        return s;
+    }
+
+    public static String deleteSpace (String string) {
+        String s = "";
+        for (int i = 0; i < string.length(); i++) {
+            if (string.charAt(i) == 32) {
+                s = s;
+            } else { 
+              s = s + string.charAt(i);  
+            }
+        }
+        System.out.println(s);
+        return s;
     }
 
     public static int[] allIndexOf (String string, char chr) {
