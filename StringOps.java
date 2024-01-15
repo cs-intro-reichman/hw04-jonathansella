@@ -22,21 +22,99 @@ public class StringOps {
     //////                                               ///////
     ////////////////////////////////////////////////////////////
     public static void main(String[] args) {
-        
+        int[] newarray = allIndexOf("hello world",'l');
+    for (int i = 0; i < newarray.length; i++) {
+        System.out.print(newarray[i]);
+    }
+
+
     }
 
     public static String capVowelsLowRest (String string) {
-        // Write your code here:
-        return "";
+        String s = "";
+        int i = 0;
+        for (string.charAt (i); i < string.length(); i++) {
+            if (string.charAt(i) == 97 || string.charAt(i) == 101 || string.charAt(i) == 105 || string.charAt(i) == 111 || string.charAt(i) == 117) {
+                s = s + (char)(string.charAt (i) - 32);
+            } else if (string.charAt(i) < 91 && string.charAt(i) > 65 && string.charAt(i) != 69 && string.charAt(i) != 73 && string.charAt(i) != 79 && string.charAt(i) != 85) {
+                s = s + (char)(string.charAt (i) + 32);
+            } else {
+                s = s + string.charAt(i);
+            }
+        }
+        return s;
     }
 
     public static String camelCase (String string) {
-        // Write your code here:
-        return "";
+        string = deleteSpacebeginning (string);
+        string = lowerCase(string);
+        string = upperNew(string);
+        string = deleteSpace(string);
+        return string;
+    }
+
+    public static String lowerCase (String string) {
+        String s = "";
+        for (int i = 0; i < string.length(); i++) {
+            if (string.charAt(i) > 64 && string.charAt(i) < 91) {
+                s = s + (char)(string.charAt(i) + 32);
+            } else { 
+              s = s + string.charAt(i);  
+            }
+        }
+        return s;
+    }
+
+    public static String upperNew (String string) {
+        String s = "" + string.charAt(0);
+        for (int i = 1; i < string.length(); i++) {
+            if (string.charAt(i) == 32) {
+                s = s + string.charAt(i);
+            }else if (string.charAt(i-1) == 32) {
+                s = s + (char)(string.charAt(i) - 32);
+            } else { 
+              s = s + string.charAt(i);  
+            }
+        }
+        return s;
+    }
+
+    public static String deleteSpace (String string) {
+        String s = "";
+        for (int i = 0; i < string.length(); i++) {
+            if (string.charAt(i) != ' ') {
+              s += string.charAt(i);  
+            }
+        }
+        return s;
+    }
+
+    public static String deleteSpacebeginning (String string) {
+        String s = "";
+        for (int i = 0; i < string.length(); i++) {
+            if (string.charAt(i) != ' ') {
+              s = string.substring(i); break; 
+            }
+        }
+        return s;
     }
 
     public static int[] allIndexOf (String string, char chr) {
-        // Write your code here:
-        return new int[1];
+        int counter = 0;
+        for (int i = 0; i < string.length(); i++) {
+            if (string.charAt(i) == chr) {
+                counter++;
+             }
+        }
+        int[] array = new int[counter];
+        for (int r = 0; r < array.length; r++) {
+        for (int j = 0; j < string.length(); j++) {
+            if (string.charAt(j) == chr) {
+            array [r] = j;
+            r++;
+            }
+        }
+    }
+        return array;
     }
 }
